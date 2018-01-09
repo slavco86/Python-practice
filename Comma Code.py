@@ -2,9 +2,9 @@ def convert(atr):
     newList = ''
     for i in atr:
         if atr.index(i) < len(atr)-1:
-            newList += i + ', '
+            newList += str(i) + ', '
         else:
-            newList += 'and ' + i
+            newList += 'and ' + str(i)
     return newList
 words = []
 while True:
@@ -12,6 +12,5 @@ while True:
     word = input()
     if word == '':
         print('Your collection of words is: ' + str(convert(words)))
-        words = []
         break
-    words = words + [word] 
+    words += [word]
