@@ -1,11 +1,15 @@
 
-coins = [100, 50, 20, 10, 5, 2, 1]
+from decimal import *
+
+coins = [1, .50, .20, .10, .05, .02, .01]
 
 def give_change(amount):
+    amount = Decimal(str(amount))
     change = []
-    while amount > 0:
-        for coin in coins:
-            if coin <= amount:
-                amount -= coin
-                change.append(coin)
+    for coin in coins:
+        coin = Decimal(str(coin))
+        while coin <= amount:
+            amount -= coin
+            change.append(float(coin))
     return change
+print(give_change(.18))
